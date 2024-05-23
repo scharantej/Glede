@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Stock Analysis Results</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Google Stock Analysis Results</h1>
+<div id="results">
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Open</th>
+<th>High</th>
+<th>Low</th>
+<th>Close</th>
+<th>Volume</th>
+</tr>
+</thead>
+<tbody>
+{% for row in hist.iterrows() %}
+<tr>
+<td>{{ row[0] }}</td>
+<td>{{ row[1]['Open'] }}</td>
+<td>{{ row[1]['High'] }}</td>
+<td>{{ row[1]['Low'] }}</td>
+<td>{{ row[1]['Close'] }}</td>
+<td>{{ row[1]['Volume'] }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</body>
+</html>
+
